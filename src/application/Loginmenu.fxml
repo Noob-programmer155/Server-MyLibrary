@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<fx:root prefHeight="720.0" prefWidth="1240.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="borderpanes2" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="527.0" spacing="5.0">
+               <children>
+                  <Label text="Admin" textFill="#fcfafa">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="admininit" />
+                  <Label layoutX="10.0" layoutY="50.0" text="Password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <PasswordField fx:id="passwordadmininit" onKeyReleased="#init_admin" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </HBox>
+            <BorderPane prefHeight="100.0" prefWidth="737.0">
+               <center>
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Text fill="#ff5500" stroke="ORANGE" strokeType="OUTSIDE" strokeWidth="3.0" text="My Library">
+                           <font>
+                              <Font name="Forte" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" stroke="#ff7000" strokeType="OUTSIDE" strokeWidth="2.0" text="    We are keep's future of the knowledge">
+                           <font>
+                              <Font name="Gadugi" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="25.0" />
+                     </BorderPane.margin>
+                  </TextFlow>
+               </center>
+            </BorderPane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="User">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="1240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="scrolluser" prefHeight="581.0" prefWidth="883.0" visible="false">
+                                 <content>
+                                    <VBox fx:id="containermainuser" prefHeight="28.0" prefWidth="920.0" />
+                                 </content>
+                              </ScrollPane>
+                              <VBox alignment="TOP_CENTER" prefHeight="581.0" prefWidth="407.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Edit User">
+                                       <font>
+                                          <Font name="System Bold" size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="372.0" spacing="20.0">
+                                       <children>
+                                          <Label text="Search" />
+                                          <TextField fx:id="userssearchfields" onKeyReleased="#userssearchfields_keypressed" prefHeight="31.0" prefWidth="271.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label layoutX="153.0" layoutY="10.0" text="Description">
+                                       <font>
+                                          <Font name="System Bold" size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <BorderPane prefHeight="442.0" prefWidth="382.0">
+                                       <center>
+                                          <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <TextArea fx:id="iduserfields" minHeight="35" maxHeight="35" editable="false" promptText="Ids..">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                                <TextArea fx:id="nameuserfields" minHeight="35" maxHeight="35" editable="false" layoutX="10.0" layoutY="10.0" promptText="Names...">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                                <TextArea fx:id="emailuserfields" minHeight="35" maxHeight="35" editable="false" layoutX="20.0" layoutY="61.0" promptText="Email..">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                                <TextArea fx:id="passworduserfields" minHeight="35" maxHeight="35" editable="false" layoutX="10.0" layoutY="214.0" promptText="Password..">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                                <TextArea fx:id="typeuserfields" minHeight="35" maxHeight="35" promptText="Users Types..">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                                <Button fx:id="deleteusersbtn" mnemonicParsing="false" onAction="#deleteusersbtn_pressed" text="Delete users" />
+                                                <Button mnemonicParsing="false" onAction="#userrefresh" prefHeight="31.0" prefWidth="104.0" text="Refresh" />
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets top="20.0" />
+                                             </BorderPane.margin>
+                                          </VBox>
+                                       </center></BorderPane>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Book">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="scrollbook" prefHeight="581.0" prefWidth="895.0" visible="false">
+                                 <content>
+                                    <VBox fx:id="containermainbook" prefHeight="50.0" prefWidth="920.0" />
+                                 </content>
+                              </ScrollPane>
+                              <BorderPane prefHeight="581.0" prefWidth="361.0">
+                                 <center>
+                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Book Properties">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="353.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Search" />
+                                                <TextField fx:id="booksearchfields" onKeyReleased="#booksearchfields_keypressed" prefHeight="31.0" prefWidth="238.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <ScrollPane prefHeight="465.0" prefWidth="343.0">
+                                             <content>
+                                                <Accordion prefHeight="62.0" prefWidth="343.0">
+                                                  <panes>
+                                                    <TitledPane minHeight="500.0" text="Description">
+                                                         <content>
+                                                            <VBox alignment="TOP_CENTER" minHeight="468.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                                                               <children>
+                                                                  <TextArea fx:id="titlebookdescfields" minHeight="35" maxHeight="35" layoutX="22.0" layoutY="22.0" promptText="Title Books.." />
+                                                                  <TextArea fx:id="authorbookdescfields" minHeight="35" maxHeight="35" layoutX="22.0" layoutY="73.0" promptText="Authors.." />
+                                                                  <TextArea fx:id="descbookdescareas" prefHeight="200.0" prefWidth="200.0" promptText="Descriptions.." />
+                                                                  <Button fx:id="deletebookdescbtn" mnemonicParsing="false" onAction="#deletebookdescbtn_pressed" text="Delete Books" />
+                                                               </children>
+                                                            </VBox>
+                                                         </content>
+                                                      </TitledPane>
+                                                    <TitledPane minHeight="500.0" prefHeight="0.0" prefWidth="343.0" text="Add Book">
+                                                         <content>
+                                                            <VBox alignment="TOP_CENTER" minHeight="468.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                                                               <children>
+                                                                  <Button fx:id="imgbookaddbtn" mnemonicParsing="false" onAction="#imgbookaddbtn_pressed" prefHeight="110.0" prefWidth="110.0">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@No_Image.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic></Button>
+                                                                  <TextArea fx:id="titlebookaddfields" minHeight="35" maxHeight="35" promptText="Add Book Title" />
+                                                                  <TextArea fx:id="authorbookaddfields" minHeight="35" maxHeight="35" layoutX="22.0" layoutY="142.0" promptText="Add Author" />
+                                                                  <TextArea fx:id="descbookaddareas" prefHeight="200.0" prefWidth="200.0" promptText="Add Description Book" wrapText="true" />
+                                                                  <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Button fx:id="addbookaddbtn" mnemonicParsing="false" onAction="#addbookaddbtn_pressed" text="Add Book" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </content>
+                                                      </TitledPane>
+                                                      <TitledPane minHeight="500.0" prefHeight="200.0" prefWidth="200.0" text="Update Book">
+                                                         <content>
+                                                            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                               <children>
+                                                                  <TextArea fx:id="authorbookdescfields1" minHeight="35" maxHeight="35" promptText="Authors.." />
+                                                                  <TextArea fx:id="titlebookdescfields1" minHeight="35" maxHeight="35" promptText="Title Books.." />
+                                                                  <TextArea fx:id="descbookdescareas1" prefHeight="200.0" prefWidth="200.0" promptText="Descriptions.." />
+                                                                  <Button fx:id="updatebookdescbtn" mnemonicParsing="false" onAction="#updatebookdescbtn_pressed" text="Update Book" />
+                                                               </children>
+                                                            </VBox>
+                                                         </content>
+                                                      </TitledPane>
+                                                  </panes>
+                                                </Accordion>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</fx:root>
